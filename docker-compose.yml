@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: clagomess/docker-postgres-8.4.7
+    network_mode: bridge
+    ports:
+      - "5432:5432"
+    #volumes:
+    #  - ./data:/usr/local/pgsql/data:z
