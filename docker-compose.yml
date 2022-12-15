@@ -6,5 +6,5 @@ services:
     network_mode: bridge
     ports:
       - "5432:5432"
-    #volumes:
-    #  - ./data:/usr/local/pgsql/data:z
+    volumes:
+      - ./data:/usr/local/pgsql/data

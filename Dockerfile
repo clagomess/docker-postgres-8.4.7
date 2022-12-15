@@ -23,10 +23,7 @@ RUN echo "postgres" > /usr/local/pgsql/share/password.txt \
     && echo "host  all all 0.0.0.0/0 md5" >> /usr/local/pgsql/share/pg_hba.conf.sample \
     && echo "listen_addresses = '*'" >> /usr/local/pgsql/share/postgresql.conf.sample
 
-USER postgres
-
 COPY docker-entrypoint.sh /home/postgres/docker-entrypoint.sh
 
-ENTRYPOINT [ "sh", "-e", "/home/postgres/docker-entrypoint.sh" ]
 EXPOSE 5432
-CMD ["/usr/local/pgsql/bin/postgres"]
+CMD ["sh", "-e", "/home/postgres/docker-entrypoint.sh"]
